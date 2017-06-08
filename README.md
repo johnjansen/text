@@ -25,6 +25,7 @@ require "text"
 ```
 
 ### Levenshtein distance
+You should use the Levenshtein module in the Crystal StdLib though ...
 ```
   Text::Levenshtein.distance('test', 'test')
   # => 0
