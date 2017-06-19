@@ -102,14 +102,14 @@ module Text
 
       # Step 1b
       if w =~ /eed$/
-        w = w.chop if $~.pre_match =~ MGR0 
+        w = w.rchop if $~.pre_match =~ MGR0 
       elsif w =~ /(ed|ing)$/
         stem = $~.pre_match
         if stem =~ VOWEL_IN_STEM 
           w = stem
         case w
           when /(at|bl|iz)$/             then w = "#{w}e"
-          when /([^aeiouylsz])\1$/       then w = w.chop
+          when /([^aeiouylsz])\1$/       then w = w.rchop
           when /^#{CC}#{V}[^aeiouwxy]$/ then w = "#{w}e"
           end
         end
@@ -161,7 +161,7 @@ module Text
       end
 
       if w =~ /ll$/ && w =~ MGR1
-        w = w.chop
+        w = w.rchop
       end
 
       # and turn initial Y back to y
