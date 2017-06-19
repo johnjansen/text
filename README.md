@@ -3,7 +3,7 @@
 [![GitHub version](https://badge.fury.io/gh/johnjansen%2Ftext.svg)](http://badge.fury.io/gh/johnjansen%2Ftext)
 [![CI](https://travis-ci.org/johnjansen/text.svg?branch=master)](https://travis-ci.org/johnjansen/text)
 
-A collection of text algorithms.
+A collection of text algorithms. Including; Porter-Stemmer, Soundex, Metaphone, Double Metaphone & White Similarity
 
 ## Installation
 
@@ -25,6 +25,7 @@ require "text"
 ```
 
 ### Levenshtein distance
+You should use the Levenshtein module in the Crystal StdLib though ...
 ```
   Text::Levenshtein.distance('test', 'test')
   # => 0
