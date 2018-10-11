@@ -19,12 +19,12 @@ end
 
 describe "Single Metaphone" do
   it "should metaphone" do
-    YAML.parse(File.read("spec/data/metaphone.yml")).each do |input, expected_output|
+    YAML.parse(File.read("spec/data/metaphone.yml")).as_h.each do |input, expected_output|
       Text::Metaphone.metaphone(input.to_s).should eq expected_output.to_s
     end
   end
 
-  it "should test_junk" do 
+  it "should test_junk" do
     Text::Metaphone.metaphone("foobar").should eq Text::Metaphone.metaphone("%^@#$^f%^&o%^o@b#a@#r%^^&")
     Text::Metaphone.metaphone("foobar", {"buggy"=>"true"}).should eq Text::Metaphone.metaphone("%^@#$^f%^&o%^o@b#a@#r%^^&", {"buggy"=>"true"})
   end
