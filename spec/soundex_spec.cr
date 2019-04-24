@@ -4,7 +4,7 @@ require "yaml"
 describe Text::Soundex do
   it "should test_cases" do
     data = YAML.parse(File.read("spec/data/soundex.yml"))
-    data.each do |input|
+    data.as_h.keys.each do |input|
       input = input.to_s
       expected_output = data[input].to_s
       Text::Soundex.soundex(input).should eq expected_output
